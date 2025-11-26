@@ -1,5 +1,8 @@
 import pandas as pd
 import sqlite3
+#animal_id
+#animal_subid
+#animal_shelter_pkid(動物所屬收容所代碼)
 #animal_place(動物的實際所在地)
 #animal_kind(動物的類型)
 #animal_Variety(動物品種)
@@ -22,12 +25,15 @@ import sqlite3
 #album_update(異動時間)
 #cDate(資料更新時間)
 
+#adoption_date
+#adopter_phone
+
 
 if __name__ == "__main__":
         
-    csv_path = "COA_OpenData.csv"
+    csv_path = "COA_OpenData_with_adopter.csv"
     db_path = "test.db"
-    df = pd.read_csv(csv_path, encoding="utf-8")
+    df = pd.read_csv(csv_path, encoding="utf-8",dtype={"adopter_phone": "string"} )
     con = sqlite3.connect(db_path)
 
 
@@ -55,13 +61,41 @@ if __name__ == "__main__":
         "animal_createtime",
         "album_file",
         "album_update",
-        "cDate"
+        "cDate",
+        "adoption_date",
+        "adopter_phone"
 
     ]].copy()
 
-    # animal_df = animal_df.rename(columns={
-        
-    # })
+    
+    animal_df = animal_df.rename(columns={
+        "animal_id":"id",
+        "animal_subid":"sub_id",
+        "animal_shelter_pkid":"shelter_pkid",
+        "animal_place":"place",
+        "animal_kind":"kind",
+        "animal_Variety":"variety",
+        "animal_sex":"sex",
+        "animal_bodytype":"bodytype",
+        "animal_colour":"colour",
+        "animal_age":"age",
+        "animal_sterilization":"sterilization",
+        "animal_bacterin":"bacterin",
+        "animal_foundplace":"foundplace",
+        "animal_title":"title",
+        "animal_status":"status",
+        "animal_remark":"remark",
+        "animal_caption":"caption",
+        "animal_opendate":"opendate",
+        "animal_closeddate":"closeddate",
+        "animal_update":"update_at",
+        "animal_createtime":"createtime",
+        "album_file":"album_file",
+        "album_update":"album_update",
+        "cDate":"cDate",
+        "adoption_date":"adoption_date",
+        "adopter_phone":"adopter_phone"
+    })
 
     animal_df.to_sql(
         "Animal",
