@@ -1,0 +1,7 @@
+animal_id,animal_area_pkid,animal_shelter_pkid,shelter_name,shelter_address,shelter_tel,animal_kind,animal_sex,animal_bodytype,animal_colour,animal_age,animal_opendate,adoption_date,adopter_name,adopter_phone,adopter_email,adopter_city,adopter_age,adopter_house_type
+1001,2,201,新北市板橋收容所,新北市板橋區XX路100號,02-12345678,狗,M,中型,黑白,成年,2024-01-10,2024-01-25,王小明,0912345678,user1@example.com,新北市,28,大樓華廈
+1002,2,201,新北市板橋收容所,新北市板橋區XX路100號,02-12345678,狗,F,小型,棕色,幼年,2024-02-05,, , , , ,,
+1003,1,101,台北市內湖收容所,台北市內湖區XX街20號,02-87654321,貓,F,小型,白色,成年,2024-03-01,2024-03-20,陳怡君,0987654321,user2@example.com,台北市,32,公寓
+1004,1,101,台北市內湖收容所,台北市內湖區XX街20號,02-87654321,狗,M,大型,黑色,老年,2024-01-15,, , , , ,,
+1005,3,305,桃園市動物保護教育園區,桃園市桃園區YY路50號,03-22223333,狗,M,中型,黃白,成年,2024-04-10,2024-05-02,張家豪,0922001100,user3@example.com,桃園市,40,透天厝
+1006,3,305,桃園市動物保護教育園區,桃園市桃園區YY路50號,03-22223333,貓,F,小型,虎斑,幼年,2024-04-18,2024-04-30,林雅婷,0977123456,user4@example.com,桃園市,24,大樓華廈
