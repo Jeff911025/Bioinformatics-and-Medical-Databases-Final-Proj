@@ -1,0 +1,5 @@
+# animal_shelter_pkid(動物所屬收容所代碼)
+# shelter_name(動物所屬收容所名稱)
+# animal_area_pkid(動物所屬縣市代碼)
+# shelter_address(地址)
+# shelter_tel(連絡電話)

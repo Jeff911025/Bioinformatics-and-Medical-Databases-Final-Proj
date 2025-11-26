@@ -4,12 +4,6 @@ import sqlite3
 
 
 if __name__ == "__main__":
-    # df = pd.read_csv("animals_with_adoption.csv", encoding="utf-8")
-    # con = sqlite3.connect("test.db")
-
-    # df.to_sql("RawAnimal", con, if_exists="append", index=False)
-
-    # con.close()
         
     csv_path = "COA_OpenData.csv"
     db_path = "test.db"
