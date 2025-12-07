@@ -48,3 +48,5 @@
 2. 初始化只要執行一個py檔案。
 3. 對照表放在column_map.json方便檢視修改。
 4. 原先疑似是py檔案中的to_sql語法直接建立schema，而非透過sql指令，邏輯怪怪，理想中py檔案只負責插入工作，建立是由sql指令負責。
+> 證明: 刪除test.db > 新增乾淨test.db檔案 > 執行 utils\load_animal_to_sql.py 
+> VS code介面左側 test.db檔案右鍵 > New Query > 在新的檔案中寫 SELECT * FROM Animal; > 右鍵 Run Query > 一樣顯示，這個過程沒有用到-- SQLite.sql
