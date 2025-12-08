@@ -1,0 +1,47 @@
+{
+    "Animal": {
+        "animal_id": "id",
+        "animal_subid": "sub_id",
+        "animal_place": "place",
+        "animal_kind": "kind",
+        "animal_Variety": "variety",
+        "animal_sex": "sex",
+        "animal_bodytype": "bodytype",
+        "animal_colour": "colour",
+        "animal_age": "age",
+        "animal_sterilization": "sterilization",
+        "animal_bacterin": "bacterin",
+        "animal_foundplace": "foundplace",
+        "animal_title": "title",
+        "animal_status": "status",
+        "animal_caption": "caption",
+        "animal_opendate": "opendate",
+        "animal_closeddate": "closeddate",
+        "animal_update": "update_at",
+        "animal_createtime": "createtime",
+        "album_file": "album_file",
+        "album_update": "album_update",
+        "cDate": "cDate",
+        "adoption_date": "adoption_date",
+        "animal_shelter_pkid": "shelter_pkid",
+        "adopter_phone": "adopter_phone"
+    },
+
+    "animal_remark": {
+        "animal_id": "id",
+        "animal_remark": "remark"
+    },
+
+    "Shelter": {
+        "animal_shelter_pkid": "id",
+        "shelter_name": "name",
+        "shelter_address": "address",
+        "shelter_tel": "phone"
+    },
+
+    "Adopter": {
+        "adopter_phone": "adopter_phone",
+        "adopter_name": "name",
+        "adopter_email": "email"
+    }
+}

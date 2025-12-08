@@ -1,4 +1,5 @@
-CREATE TABLE IF NOT EXISTS Animal (
+-- SQLite
+CREATE TABLE Animal (
     id  INTEGER PRIMARY KEY,
     sub_id  TEXT,
     place TEXT,
@@ -13,7 +14,6 @@ CREATE TABLE IF NOT EXISTS Animal (
     foundplace TEXT,
     title TEXT,
     status TEXT,
-    remark TEXT,
     caption TEXT,
     opendate TEXT,
     closeddate TEXT,
@@ -27,17 +27,21 @@ CREATE TABLE IF NOT EXISTS Animal (
     adopter_phone TEXT REFERENCES Adopter(adopter_phone)
 );
 
-CREATE TABLE IF NOT EXISTS Shelter (
+CREATE TABLE animal_remark (
+    id  INTEGER REFERENCES Animal(id),
+    remark TEXT
+);
+
+CREATE TABLE Shelter (
     id INTEGER PRIMARY KEY,
     name TEXT,
     address TEXT,
     phone TEXT,
     email TEXT
 );
-CREATE TABLE IF NOT EXISTS Adopter (
+
+CREATE TABLE Adopter (
     adopter_phone TEXT PRIMARY KEY,
     name TEXT,
     email TEXT
-);  
-
-SELECT * FROM Animal;
+);
