@@ -70,18 +70,30 @@ FROM Animal
 GROUP BY kind
 ORDER BY total DESC;
 
-加分小招：做一個 View，demo 更像「系統」
-CREATE VIEW v_animal_full AS
+各縣市領養數量排行榜：
 SELECT
-  a.*,
-  s.name AS shelter_name, s.address AS shelter_address, s.phone AS shelter_phone,
-  ad.name AS adopter_name, ad.phone AS adopter_phone, ad.email AS adopter_email
+  ad.city,
+  COUNT(*) AS adopted_cnt
 FROM Animal a
-LEFT JOIN Shelter s ON a.shelter_pkid = s.id
-LEFT JOIN Adopter ad ON a.adopter_id = ad.id;
-然後 demo 就用：
-SELECT id, kind, variety, shelter_name, adopter_name
-FROM v_animal_full
-ORDER BY datetime(update_at) DESC
-LIMIT 20;
+JOIN Adopter ad ON a.adopter_id = ad.id
+GROUP BY ad.city
+ORDER BY adopted_cnt DESC, ad.city;
 
+
+SELECT
+  ad.house_type,
+  COUNT(*) AS adopted_cnt
+FROM Animal a
+JOIN Adopter ad ON a.adopter_id = ad.id
+GROUP BY ad.house_type
+ORDER BY adopted_cnt DESC;
+
+
+查詢特定收容所中的動物資料：
+SELECT
+  a.id, a.kind, a.variety, a.sex, a.age, a.status,
+  s.name AS shelter_name
+FROM Animal a
+JOIN Shelter s ON a.shelter_pkid = s.id
+WHERE s.id = 50
+ORDER BY datetime(a.update_at) DESC, a.id DESC;

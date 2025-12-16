@@ -138,6 +138,7 @@ def main():
         df.at[row_idx, "adopter_age"] = random.randint(20, 65)
         df.at[row_idx, "adopter_house_type"] = random.choice(HOUSE_TYPES)
         df.at[row_idx, "adopter_id"] = idx_i + 1  # 從 1 開始編號
+        df.at[row_idx, "animal_status"] = "CLOSE"  # 被領養的動物狀態改為 CLOSE
 
     # 驗證：所有有 adoption_date 的列都滿足 adoption_date > animal_opendate
     invalid_mask = adopted_mask & (df["adoption_date"] <= df["animal_opendate"])
