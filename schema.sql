@@ -22,7 +22,7 @@ CREATE TABLE Animal (
     cDate TEXT,
     adoption_date TEXT,
     shelter_pkid INTEGER REFERENCES Shelter(id),
-    adopter_phone TEXT REFERENCES Adopter(adopter_phone)
+    adopter_id INTEGER REFERENCES Adopter(id)
 );
 
 CREATE TABLE animal_remark (
@@ -38,7 +38,8 @@ CREATE TABLE Shelter (
 );
 
 CREATE TABLE Adopter (
-    adopter_phone TEXT PRIMARY KEY,
+    id INTEGER PRIMARY KEY,
+    phone TEXT,
     name TEXT,
     email TEXT
 );

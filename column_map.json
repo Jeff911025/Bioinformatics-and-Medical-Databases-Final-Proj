@@ -22,7 +22,7 @@
         "cDate": "cDate",
         "adoption_date": "adoption_date",
         "animal_shelter_pkid": "shelter_pkid",
-        "adopter_phone": "adopter_phone"
+        "adopter_id": "adopter_id"
     },
 
     "animal_remark": {
@@ -38,7 +38,8 @@
     },
 
     "Adopter": {
-        "adopter_phone": "adopter_phone",
+        "adopter_id": "id",
+        "adopter_phone": "phone",
         "adopter_name": "name",
         "adopter_email": "email"
     }
