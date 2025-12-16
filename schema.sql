@@ -13,7 +13,6 @@ CREATE TABLE Animal (
     foundplace TEXT,
     title TEXT,
     status TEXT,
-    caption TEXT,
     opendate TEXT,
     update_at TEXT,
     createtime TEXT,

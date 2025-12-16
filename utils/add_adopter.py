@@ -71,16 +71,30 @@ def gen_adoption_date(open_date: pd.Timestamp):
     """根據 animal_opendate 產生 adoption_date。
     - 有機率不產生（表示尚未被領養）
     - 若產生，一定晚於 open_date（至少 +1 天）
+    - open_date 不能晚於當前日期
+    - adoption_date 不能超過今天日期
     """
     if pd.isna(open_date):
+        return pd.NaT
+
+    today = pd.Timestamp.now().normalize()
+    
+    # 確保 open_date 不晚於當前日期
+    if open_date > today:
         return pd.NaT
 
     # 決定這隻動物有沒有被領養
     if random.random() > ADOPTION_RATE:
         return pd.NaT
 
-    # 隨機在 opendate + 1 ~ MAX_DAYS_AFTER_OPEN 天內
-    delta_days = random.randint(1, MAX_DAYS_AFTER_OPEN)
+    # 計算可領養的最大天數（不超過今天）
+    max_possible_days = (today - open_date).days
+    if max_possible_days < 1:
+        return pd.NaT
+    
+    # 隨機在 opendate + 1 ~ min(MAX_DAYS_AFTER_OPEN, max_possible_days) 天內
+    actual_max_days = min(MAX_DAYS_AFTER_OPEN, max_possible_days)
+    delta_days = random.randint(1, actual_max_days)
     return open_date + pd.Timedelta(days=delta_days)
 
 

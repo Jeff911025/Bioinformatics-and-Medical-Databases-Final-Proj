@@ -13,7 +13,6 @@
         "animal_foundplace": "foundplace",
         "animal_title": "title",
         "animal_status": "status",
-        "animal_caption": "caption",
         "animal_opendate": "opendate",
         "animal_update": "update_at",
         "animal_createtime": "createtime",

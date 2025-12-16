@@ -84,3 +84,4 @@ SELECT id, kind, variety, shelter_name, adopter_name
 FROM v_animal_full
 ORDER BY datetime(update_at) DESC
 LIMIT 20;
+
