@@ -39,7 +39,14 @@ def insert_table(cursor, df, mapping, table_name, key_field=None):
 
 
 if __name__ == "__main__":
-    df = pd.read_csv(CSV_PATH, encoding="utf-8")
+    df = pd.read_csv(
+        CSV_PATH,
+        encoding="utf-8",
+        dtype={
+            "adopter_phone": "string"
+        }
+    )
+
     mapping = load_mapping(COLUMN_MAP_FILE)
 
     con = sqlite3.connect(DB_PATH)
@@ -66,7 +73,12 @@ if __name__ == "__main__":
 
     # ========== Adopter ==========
     adopter_map = mapping["Adopter"]
-    adopter_df = df[adopter_map.keys()].drop_duplicates(subset=["adopter_phone"])
+    # 取得 Adopter 資料
+    adopter_df = df[adopter_map.keys()].copy()
+    # 1) 濾掉 adopter_phone 為 NaN 的資料（避免 NULL 被寫入資料庫）
+    adopter_df = adopter_df.dropna(subset=["adopter_phone"])
+    # 2) 去除重複電話（同一電話只插一次）
+    adopter_df = adopter_df.drop_duplicates(subset=["adopter_phone"])
     insert_table(cur, adopter_df, adopter_map, "Adopter")
 
     con.commit()
