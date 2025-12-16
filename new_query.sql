@@ -97,3 +97,4 @@ FROM Animal a
 JOIN Shelter s ON a.shelter_pkid = s.id
 WHERE s.id = 50
 ORDER BY datetime(a.update_at) DESC, a.id DESC;
+

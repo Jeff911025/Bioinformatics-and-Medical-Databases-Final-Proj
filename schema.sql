@@ -11,7 +11,6 @@ CREATE TABLE Animal (
     sterilization TEXT,
     bacterin TEXT,
     foundplace TEXT,
-    title TEXT,
     status TEXT,
     opendate TEXT,
     update_at TEXT,

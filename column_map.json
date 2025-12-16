@@ -11,7 +11,6 @@
         "animal_sterilization": "sterilization",
         "animal_bacterin": "bacterin",
         "animal_foundplace": "foundplace",
-        "animal_title": "title",
         "animal_status": "status",
         "animal_opendate": "opendate",
         "animal_update": "update_at",
