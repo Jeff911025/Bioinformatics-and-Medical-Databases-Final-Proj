@@ -2,7 +2,6 @@
 CREATE TABLE Animal (
     id  INTEGER PRIMARY KEY,
     sub_id  TEXT,
-    place TEXT,
     kind TEXT,
     variety TEXT,
     sex TEXT,
@@ -16,7 +15,6 @@ CREATE TABLE Animal (
     status TEXT,
     caption TEXT,
     opendate TEXT,
-    closeddate TEXT,
     update_at TEXT,
     createtime TEXT,
     album_file TEXT,
@@ -36,8 +34,7 @@ CREATE TABLE Shelter (
     id INTEGER PRIMARY KEY,
     name TEXT,
     address TEXT,
-    phone TEXT,
-    email TEXT
+    phone TEXT
 );
 
 CREATE TABLE Adopter (

@@ -2,7 +2,6 @@
     "Animal": {
         "animal_id": "id",
         "animal_subid": "sub_id",
-        "animal_place": "place",
         "animal_kind": "kind",
         "animal_Variety": "variety",
         "animal_sex": "sex",
@@ -16,7 +15,6 @@
         "animal_status": "status",
         "animal_caption": "caption",
         "animal_opendate": "opendate",
-        "animal_closeddate": "closeddate",
         "animal_update": "update_at",
         "animal_createtime": "createtime",
         "album_file": "album_file",

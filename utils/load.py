@@ -3,7 +3,7 @@ import sqlite3
 import json
 
 COLUMN_MAP_FILE = "column_map.json"
-CSV_PATH = "F:\Dataset_course_github_copy\Bioinformatics-and-Medical-Databases-Final-Proj\COA_OpenData_with_adopter.csv"
+CSV_PATH = "COA_OpenData_with_adopter.csv"
 DB_PATH = "test.db"
 
 
