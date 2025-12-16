@@ -40,5 +40,8 @@ CREATE TABLE Adopter (
     id INTEGER PRIMARY KEY,
     phone TEXT,
     name TEXT,
-    email TEXT
+    email TEXT,
+    city TEXT, 
+    age INTEGER,
+    house_type TEXT
 );

@@ -40,6 +40,9 @@
         "adopter_id": "id",
         "adopter_phone": "phone",
         "adopter_name": "name",
-        "adopter_email": "email"
+        "adopter_email": "email",
+        "adopter_city": "city",
+        "adopter_age": "age", 
+        "adopter_house_type": "house_type"
     }
 }
